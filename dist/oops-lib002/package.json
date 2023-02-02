@@ -1,0 +1,31 @@
+{
+  "name": "oops-lib002",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "module": "fesm2015/oops-lib002.mjs",
+  "es2020": "fesm2020/oops-lib002.mjs",
+  "esm2020": "esm2020/oops-lib002.mjs",
+  "fesm2020": "fesm2020/oops-lib002.mjs",
+  "fesm2015": "fesm2015/oops-lib002.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2020": "./esm2020/oops-lib002.mjs",
+      "es2020": "./fesm2020/oops-lib002.mjs",
+      "es2015": "./fesm2015/oops-lib002.mjs",
+      "node": "./fesm2015/oops-lib002.mjs",
+      "default": "./fesm2020/oops-lib002.mjs"
+    }
+  },
+  "sideEffects": false
+}

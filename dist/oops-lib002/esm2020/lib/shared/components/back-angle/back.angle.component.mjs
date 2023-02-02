@@ -1,0 +1,27 @@
+import { Component, Input } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/router";
+export class BackAngleComponent {
+    constructor(route, router) {
+        this.route = route;
+        this.router = router;
+        this.routerLinkInput = '/home';
+        this.linkText = 'Back to Home';
+    }
+    ngOnInit() { }
+    navTo() {
+        console.log(this.routerLinkInput, this.linkText);
+        this.router.navigate([this.routerLinkInput], { relativeTo: this.route });
+    }
+}
+BackAngleComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: BackAngleComponent, deps: [{ token: i1.ActivatedRoute }, { token: i1.Router }], target: i0.ɵɵFactoryTarget.Component });
+BackAngleComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.12", type: BackAngleComponent, selector: "app-back-angle", inputs: { routerLinkInput: "routerLinkInput", linkText: "linkText" }, ngImport: i0, template: "<div class=\"backDiv\">\r\n  <a (click)=\"navTo()\">\r\n    <!-- <fa-icon [icon]=\"faAngleLeft\" class=\"faIconAngleLeft\"></fa-icon>{{ linkText }} -->\r\n    <i class=\"arrow left\"></i>&nbsp;{{ linkText }}\r\n  </a>\r\n</div>\r\n", styles: [".backDiv{padding:10px 0;text-decoration:underline}.backDiv:hover{cursor:pointer}.arrow{border:solid black;border-width:0 3px 3px 0;display:inline-block;padding:3px}.right{transform:rotate(-45deg);-webkit-transform:rotate(-45deg)}.left{transform:rotate(135deg);-webkit-transform:rotate(135deg)}.up{transform:rotate(-135deg);-webkit-transform:rotate(-135deg)}.down{transform:rotate(45deg);-webkit-transform:rotate(45deg)}\n"] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: BackAngleComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'app-back-angle', template: "<div class=\"backDiv\">\r\n  <a (click)=\"navTo()\">\r\n    <!-- <fa-icon [icon]=\"faAngleLeft\" class=\"faIconAngleLeft\"></fa-icon>{{ linkText }} -->\r\n    <i class=\"arrow left\"></i>&nbsp;{{ linkText }}\r\n  </a>\r\n</div>\r\n", styles: [".backDiv{padding:10px 0;text-decoration:underline}.backDiv:hover{cursor:pointer}.arrow{border:solid black;border-width:0 3px 3px 0;display:inline-block;padding:3px}.right{transform:rotate(-45deg);-webkit-transform:rotate(-45deg)}.left{transform:rotate(135deg);-webkit-transform:rotate(135deg)}.up{transform:rotate(-135deg);-webkit-transform:rotate(-135deg)}.down{transform:rotate(45deg);-webkit-transform:rotate(45deg)}\n"] }]
+        }], ctorParameters: function () { return [{ type: i1.ActivatedRoute }, { type: i1.Router }]; }, propDecorators: { routerLinkInput: [{
+                type: Input
+            }], linkText: [{
+                type: Input
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmFjay5hbmdsZS5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9vb3BzLWxpYjAwMi9zcmMvbGliL3NoYXJlZC9jb21wb25lbnRzL2JhY2stYW5nbGUvYmFjay5hbmdsZS5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9vb3BzLWxpYjAwMi9zcmMvbGliL3NoYXJlZC9jb21wb25lbnRzL2JhY2stYW5nbGUvYmFjay5hbmdsZS5jb21wb25lbnQuaHRtbCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFFLEtBQUssRUFBVSxNQUFNLGVBQWUsQ0FBQzs7O0FBT3pELE1BQU0sT0FBTyxrQkFBa0I7SUFJN0IsWUFBb0IsS0FBcUIsRUFBVSxNQUFjO1FBQTdDLFVBQUssR0FBTCxLQUFLLENBQWdCO1FBQVUsV0FBTSxHQUFOLE1BQU0sQ0FBUTtRQUh4RCxvQkFBZSxHQUFXLE9BQU8sQ0FBQztRQUNsQyxhQUFRLEdBQVcsY0FBYyxDQUFDO0lBRXlCLENBQUM7SUFFckUsUUFBUSxLQUFJLENBQUM7SUFFYixLQUFLO1FBQ0gsT0FBTyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsZUFBZSxFQUFFLElBQUksQ0FBQyxRQUFRLENBQUMsQ0FBQztRQUNqRCxJQUFJLENBQUMsTUFBTSxDQUFDLFFBQVEsQ0FBQyxDQUFDLElBQUksQ0FBQyxlQUFlLENBQUMsRUFBRSxFQUFFLFVBQVUsRUFBRSxJQUFJLENBQUMsS0FBSyxFQUFFLENBQUMsQ0FBQztJQUMzRSxDQUFDOztnSEFYVSxrQkFBa0I7b0dBQWxCLGtCQUFrQiw0SENQL0IseU9BTUE7NEZEQ2Esa0JBQWtCO2tCQUw5QixTQUFTOytCQUNFLGdCQUFnQjswSEFLakIsZUFBZTtzQkFBdkIsS0FBSztnQkFDRyxRQUFRO3NCQUFoQixLQUFLIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBJbnB1dCwgT25Jbml0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcbmltcG9ydCB7IEFjdGl2YXRlZFJvdXRlLCBSb3V0ZXIgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xyXG5AQ29tcG9uZW50KHtcclxuICBzZWxlY3RvcjogJ2FwcC1iYWNrLWFuZ2xlJyxcclxuICB0ZW1wbGF0ZVVybDogJy4vYmFjay5hbmdsZS5jb21wb25lbnQuaHRtbCcsXHJcbiAgc3R5bGVVcmxzOiBbJy4vYmFjay5hbmdsZS5jb21wb25lbnQuc2NzcyddLFxyXG59KVxyXG5leHBvcnQgY2xhc3MgQmFja0FuZ2xlQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcclxuICBASW5wdXQoKSByb3V0ZXJMaW5rSW5wdXQ6IHN0cmluZyA9ICcvaG9tZSc7XHJcbiAgQElucHV0KCkgbGlua1RleHQ6IHN0cmluZyA9ICdCYWNrIHRvIEhvbWUnO1xyXG5cclxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIHJvdXRlOiBBY3RpdmF0ZWRSb3V0ZSwgcHJpdmF0ZSByb3V0ZXI6IFJvdXRlcikge31cclxuXHJcbiAgbmdPbkluaXQoKSB7fVxyXG5cclxuICBuYXZUbygpIHtcclxuICAgIGNvbnNvbGUubG9nKHRoaXMucm91dGVyTGlua0lucHV0LCB0aGlzLmxpbmtUZXh0KTtcclxuICAgIHRoaXMucm91dGVyLm5hdmlnYXRlKFt0aGlzLnJvdXRlckxpbmtJbnB1dF0sIHsgcmVsYXRpdmVUbzogdGhpcy5yb3V0ZSB9KTtcclxuICB9XHJcbn1cclxuIiwiPGRpdiBjbGFzcz1cImJhY2tEaXZcIj5cclxuICA8YSAoY2xpY2spPVwibmF2VG8oKVwiPlxyXG4gICAgPCEtLSA8ZmEtaWNvbiBbaWNvbl09XCJmYUFuZ2xlTGVmdFwiIGNsYXNzPVwiZmFJY29uQW5nbGVMZWZ0XCI+PC9mYS1pY29uPnt7IGxpbmtUZXh0IH19IC0tPlxyXG4gICAgPGkgY2xhc3M9XCJhcnJvdyBsZWZ0XCI+PC9pPiZuYnNwO3t7IGxpbmtUZXh0IH19XHJcbiAgPC9hPlxyXG48L2Rpdj5cclxuIl19

@@ -183,6 +183,11 @@ ng g library oops-lib002 --prefix oopslib002
 - npm i --legacy-peer-deps, if needed.
 ng build oops-lib001
 ng build oops-lib002
+
+Error: TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+
+tsconfig.json, "strict": false,
+
 - check in
 - add more Components, Directives, Pipes, Services ...
 - public-api.ts
@@ -204,7 +209,11 @@ https://github.com/oopsmails/002-oopsmails-angular-lib-dist.git
 
 git subtree push --prefix=dist/oops-lib002 https://github.com/oopsmails/002-oopsmails-angular-lib-dist.git master
 
+git subtree push --prefix=dist/oops-lib002 https://github.com/oopsmails/002-oopsmails-angular-lib-dist.git master-v14
+
 git subtree push --prefix=dist/oops-lib001 https://github.com/oopsmails/001-oopsmails-angular-lib-test-dist master-v10
+
+git subtree push --prefix=dist/oops-lib001 https://github.com/oopsmails/001-oopsmails-angular-lib-test-dist master-v14
 
 
 - Note 1:

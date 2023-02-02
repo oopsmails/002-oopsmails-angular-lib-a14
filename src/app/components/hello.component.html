@@ -1,0 +1,29 @@
+<h1>{{ projectDescription }}</h1>
+
+<hr />
+Testing around the lib and push to Github.
+
+<hr />
+<oopslib001-oops-lib001></oopslib001-oops-lib001>
+
+<hr />
+<oopslib002-oops-lib002></oopslib002-oops-lib002>
+
+<hr />
+
+<ng-container *ngIf="randomItems$ | async as randomItems">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of randomItems">
+        <td>{{ item.id }}</td>
+        <td><div [innerHtml]="item.name | highlightHtml : 'ra'"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
