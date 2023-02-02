@@ -11,6 +11,18 @@ Testing around the lib and push to Github.
 
 <hr />
 
+<div *ngIf="states$ | async as states; else noState">
+  <p>There are {{ states.length }} item(s) returning by StateService!</p>
+  <p>asset/mockdata/ is existing!</p>
+</div>
+
+<ng-template #noState>
+  <p>There is no item returning by StateService!</p>
+  <p>asset/mockdata/ maybe not existing!</p>
+</ng-template>
+
+<hr />
+
 <ng-container *ngIf="randomItems$ | async as randomItems">
   <table class="table table-bordered">
     <thead>
