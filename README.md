@@ -181,6 +181,7 @@ ng g library oops-lib001 --prefix oopslib001
 ng g library oops-lib002 --prefix oopslib002
 - change package.json if needed, e.g, add dependencies.
 - npm i --legacy-peer-deps, if needed.
+ng build oops-lib001
 ng build oops-lib002
 - check in
 - add more Components, Directives, Pipes, Services ...

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OopsLib001Service {
-
-  constructor() { }
+  constructor() {}
+  doSomething() {
+    console.log('Testing lib, if you see this, then OopsLib001Service is working! Test branch!');
+  }
 }
