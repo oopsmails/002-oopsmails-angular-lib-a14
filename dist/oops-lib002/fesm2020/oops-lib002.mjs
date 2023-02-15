@@ -103,6 +103,7 @@ class SharedDataService {
     }
     getRandomItems(numOfItems, delayInMs) {
         const items = this.makeMockRandomItems(numOfItems);
+        console.log('--------------------------------------');
         if (!delayInMs) {
             return of(items);
         }
@@ -508,15 +509,15 @@ class StateService {
         );
     }
     getUsStateCity() {
-        return this.httpClient.get('assets/mockdata/cities.json').pipe(map((data) => {
+        return this.httpClient.get('../data/cities.json').pipe(map((data) => {
             let statesData;
             let states = [];
-            // console.log('Loading states and cities ..... ', data);
+            console.log('llllLoading states and cities ..... ', data);
             if (data) {
                 statesData = Object.entries(data).sort();
                 let sIdx = 0;
                 statesData.forEach((stateData) => {
-                    // console.log(`stateData[0]: `, stateData[0]);
+                    console.log(`stateData[0]: `, stateData[0]);
                     // console.log(`stateData[1]: `, stateData[1]);
                     const state = this.makeUsState(sIdx, stateData[0]);
                     sIdx++;

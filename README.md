@@ -258,3 +258,37 @@ or
 npm i --legacy-peer-deps
 
 ```
+
+## Project using lib: debugging live!!!
+
+- ref:
+
+https://indepth.dev/posts/1193/create-your-standalone-angular-library-in-10-minutes
+
+> There is a command for this: link. Like publish, you must run it from your library dist directory. It'll create a symlink in npm local registry pointing to your compiled library.
+
+```
+$ cd ./dist/my-lib
+$ npm link
+
+$ cd my-app
+$ npm link my-lib
+```
+
+> **The goal is to edit the library source and see the live result in the app using a watcher**. No need to build again the library and link/unlink it in the library dist and the app.
+
+Use two terminals to run below!!!
+
+```
+$ cd my-lib
+$ ng build --watch
+
+$ cd my-app
+$ ng serve
+$ firefox http://localhost:4200
+
+```
+
+Stop your app server before running ng build with watch option. You can't do it in dist directory, use the workspace root for instance. Run again your app server and change code in your library service. **It rebuilds your lib and the app recompile because it detected changes in its node_modules.**
+
+- If there is any change in lib, then will see two terminals are all re-compiling and re-building!
