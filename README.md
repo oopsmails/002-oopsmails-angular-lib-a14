@@ -265,7 +265,9 @@ npm i --legacy-peer-deps
 
 - top level
 
-ng build
+ng build???
+
+ng build oops-lib002
 
 - cd dist
 ng pack
