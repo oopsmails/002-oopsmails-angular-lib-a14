@@ -19,3 +19,4 @@ export * from './lib/shared/services/wikipedia.service';
 export * from './lib/shared/shared.module';
 export * from './lib/shared/models/index';
 export * from './lib/shared/validators/generic-validator';
+export * from './lib/shared/data/index';
