@@ -261,6 +261,8 @@ npm i --legacy-peer-deps
 
 ## Change Lib
 
+> **Important: Need to update version!** Otherwise, npm i will NOT pick up the change. Even do _npm cache clean --force_
+
 ```
 
 - top level
@@ -270,9 +272,9 @@ ng build???
 ng build oops-lib002
 
 - cd dist
-ng pack
+ng pack // check the version of .tgz file is update!!!
 
-- top level
+- ONLY if necessary, top level, only push changed files NOT in /dist
 
 commit and push to https://github.com/oopsmails/002-oopsmails-angular-lib-a14.git
 
