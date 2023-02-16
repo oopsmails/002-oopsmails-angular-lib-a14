@@ -9,6 +9,8 @@ export declare class StateService {
     constructor(httpClient: HttpClient);
     getUsStates(): Observable<UsState[]>;
     searchUsStates(term: string): Observable<UsState[]>;
+    getUsStateCityFromTs(): Observable<[string, any][]>;
+    getUsStateCityData(): Observable<[string, any][]>;
     getUsStateCity(): Observable<UsState[]>;
     getUsStateCitySlice(indexes: number[]): Observable<UsState[]>;
     getUsCities(): Observable<UsCity[]>;

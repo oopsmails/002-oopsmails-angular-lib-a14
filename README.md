@@ -259,6 +259,28 @@ npm i --legacy-peer-deps
 
 ```
 
+## Change Lib
+
+```
+
+- top level
+
+ng build
+
+- cd dist
+ng pack
+
+- top level
+
+commit and push to https://github.com/oopsmails/002-oopsmails-angular-lib-a14.git
+
+- then also at top level, push lib-dist
+
+git subtree push --prefix=dist/oops-lib002 https://github.com/oopsmails/002-oopsmails-angular-lib-dist.git master-v14
+
+
+```
+
 ## Project using lib: debugging live!!!
 
 - ref:

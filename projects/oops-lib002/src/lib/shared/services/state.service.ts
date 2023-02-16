@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, map, tap } from 'rxjs';
+import { Observable, of, map, tap, catchError } from 'rxjs';
+import { STATE_WITH_FLAG_DATA } from '../data/statesWithFlag.data';
+import { US_STATE_WITH_CITIES } from '../data/usStateWithCities.data';
 import { UsCity, UsState } from '../models';
 
 @Injectable({
@@ -10,13 +12,26 @@ export class StateService {
   errorMessage?: string;
   statesWithFlag$: Observable<UsState[]>;
   constructor(private httpClient: HttpClient) {
-    this.statesWithFlag$ = this.httpClient //
-      .get('assets/mockdata/statesWithFlag.json') as Observable<UsState[]>; // angular support asset in lib since v9
+    // this.statesWithFlag$ = this.httpClient //
+    //   .get('assets/mockdata/statesWithFlag.json') as Observable<UsState[]>; // angular support asset in lib since v9
     // .get('../data/statesWithFlag.json') as Observable<UsState[]>;
+    this.getUsStates();
   }
 
   getUsStates(): Observable<UsState[]> {
-    return this.statesWithFlag$;
+    // return this.statesWithFlag$;
+    return this.httpClient.get('assets/mockdata/statesWithFlag.json').pipe(
+      map((data) => {
+        console.log('oops-lib002, StateService, getUsStates from statesWithFlag.json');
+        return data as UsState[];
+      }),
+      catchError((err) => {
+        console.log('oops-lib002, StateService, json file not exist? OK, will get from data.ts!');
+        console.error(err);
+        console.log('oops-lib002, StateService, getUsStateCityData from usStateWithCities.data.ts');
+        return of(STATE_WITH_FLAG_DATA);
+      })
+    );
   }
 
   searchUsStates(term: string): Observable<UsState[]> {
@@ -38,8 +53,28 @@ export class StateService {
     );
   }
 
-  getUsStateCity(): Observable<UsState[]> {
+  getUsStateCityFromTs(): Observable<[string, any][]> {
+    return of(US_STATE_WITH_CITIES);
+  }
+
+  getUsStateCityData(): Observable<[string, any][]> {
     return this.httpClient.get('assets/mockdata/cities.json').pipe(
+      map((data) => {
+        console.log('oops-lib002, StateService, getUsStateCityData from cities.json');
+        return Object.entries(data).sort();
+      }),
+      catchError((err) => {
+        console.log('oops-lib002, StateService, json file not exist? OK, will get from data.ts!');
+        console.warn(err);
+        console.log('oops-lib002, StateService, getUsStateCityData from usStateWithCities.data.ts');
+        return of(US_STATE_WITH_CITIES);
+      })
+    );
+  }
+
+  getUsStateCity(): Observable<UsState[]> {
+    return this.getUsStateCityData().pipe(
+      // return this.httpClient.get('assets/mockdata/cities.json').pipe(
       // return this.httpClient.get('../data/cities.json').pipe( // angular support asset in lib since v9
       map((data) => {
         let statesData: [string, any][];
