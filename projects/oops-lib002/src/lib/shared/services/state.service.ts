@@ -11,8 +11,8 @@ export class StateService {
   statesWithFlag$: Observable<UsState[]>;
   constructor(private httpClient: HttpClient) {
     this.statesWithFlag$ = this.httpClient //
-      // .get('assets/mockdata/statesWithFlag.json') as Observable<UsState[]>;
-      .get('../data/statesWithFlag.json') as Observable<UsState[]>;
+      .get('assets/mockdata/statesWithFlag.json') as Observable<UsState[]>; // angular support asset in lib since v9
+    // .get('../data/statesWithFlag.json') as Observable<UsState[]>;
   }
 
   getUsStates(): Observable<UsState[]> {
@@ -39,8 +39,8 @@ export class StateService {
   }
 
   getUsStateCity(): Observable<UsState[]> {
-    // return this.httpClient.get('assets/mockdata/cities.json').pipe(
-    return this.httpClient.get('../data/cities.json').pipe(
+    return this.httpClient.get('assets/mockdata/cities.json').pipe(
+      // return this.httpClient.get('../data/cities.json').pipe( // angular support asset in lib since v9
       map((data) => {
         let statesData: [string, any][];
         let states: UsState[] = [];
