@@ -103,7 +103,6 @@ class SharedDataService {
     }
     getRandomItems(numOfItems, delayInMs) {
         const items = this.makeMockRandomItems(numOfItems);
-        console.log('--------------------------------------');
         if (!delayInMs) {
             return of(items);
         }
@@ -489,7 +488,8 @@ class StateService {
     constructor(httpClient) {
         this.httpClient = httpClient;
         this.statesWithFlag$ = this.httpClient //
-            .get('assets/mockdata/statesWithFlag.json');
+            .get('assets/mockdata/statesWithFlag.json'); // angular support asset in lib since v9
+        // .get('../data/statesWithFlag.json') as Observable<UsState[]>;
     }
     getUsStates() {
         return this.statesWithFlag$;
@@ -509,15 +509,17 @@ class StateService {
         );
     }
     getUsStateCity() {
-        return this.httpClient.get('../data/cities.json').pipe(map((data) => {
+        return this.httpClient.get('assets/mockdata/cities.json').pipe(
+        // return this.httpClient.get('../data/cities.json').pipe( // angular support asset in lib since v9
+        map((data) => {
             let statesData;
             let states = [];
-            console.log('llllLoading states and cities ..... ', data);
+            // console.log('Loading states and cities ..... ', data);
             if (data) {
                 statesData = Object.entries(data).sort();
                 let sIdx = 0;
                 statesData.forEach((stateData) => {
-                    console.log(`stateData[0]: `, stateData[0]);
+                    // console.log(`stateData[0]: `, stateData[0]);
                     // console.log(`stateData[1]: `, stateData[1]);
                     const state = this.makeUsState(sIdx, stateData[0]);
                     sIdx++;
